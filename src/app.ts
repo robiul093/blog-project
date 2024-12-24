@@ -2,7 +2,6 @@ import express, { Application, NextFunction, Request, Response } from 'express'
 import cors from 'cors'
 import { UserRoute } from './module/user/user.route';
 import { BlogRoute } from './module/blog/blog.route';
-import auth from './middlewares/auth';
 import { adminRoute } from './module/admin/admin.route';
 
 
@@ -25,6 +24,7 @@ app.get('/', (req: Request, res: Response) => {
 
 
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars, @typescript-eslint/no-explicit-any
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   const statusCode = err.status || 500;
   const message = err.message || 'Internal Server Error';

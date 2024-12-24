@@ -18,7 +18,6 @@ const getAllBlogsFromDB = async (query: Record<string, unknown>) => {
     if (query && query.search) {
         search = query?.search as string;
     };
-    console.log(search)
 
     const searchQuery = Blog.find({
         $or: [
