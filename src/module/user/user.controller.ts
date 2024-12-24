@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextFunction, Request, Response } from "express";
 import { userService } from "./user.service"
 
@@ -55,7 +56,6 @@ const userLogin = async (req: Request, res: Response, next: NextFunction) => {
 
 const getAllUser = async (req: Request, res: Response,) => {
     try {
-        console.log(req.user)
         const result = await userService.getAllUser();
 
         res.status(200).json({
