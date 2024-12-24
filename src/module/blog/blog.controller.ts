@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Request, Response } from "express";
 import { blogService } from "./blog.service";
 
@@ -59,7 +60,7 @@ const getAllBlogs = async (req: Request, res: Response) => {
 const updateBlog = async (req: Request, res: Response) => {
     try {
         const blogId = req.params.id;
-        const userId = req.user.id;
+        const userId = req.user?.id;
         const result = await blogService.updateBlogsIntoDB(blogId, userId, req.body);
 
         const sendData = {
@@ -91,7 +92,7 @@ const updateBlog = async (req: Request, res: Response) => {
 const deleteBlog = async (req: Request, res: Response) => {
     try {
         const blogId = req.params.id;
-        const userId = req.user.id;
+        const userId = req.user?.id;
 
         // const result =
         await blogService.deletBlogsFromDB(blogId, userId);
