@@ -23,7 +23,8 @@ const deleteBlog = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const id = req.params.id;
 
-        const result = await adminService.deleteBlogByAdminIntoDB(id);
+        // const result = 
+        await adminService.deleteBlogByAdminIntoDB(id);
 
         res.status(200).json({
             success: true,
